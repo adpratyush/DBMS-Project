@@ -72,7 +72,7 @@ if($_SESSION['username']=='admin'){
     </style>
   </head>
   <body>
-  <?php require 'partials/_nav.php' ?>
+  <?php require 'partials/_navcust.php' ?>
   <?php
   if($book){
     echo'<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -99,7 +99,7 @@ if($_SESSION['username']=='admin'){
           <th scope="col">Bike Number</th>
           <th scope="col">Availability</th>
           <th scope="col">Price</th>
-          <th scope="col">Description</th>
+          <th scope="col">Stock</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
@@ -116,7 +116,7 @@ if($_SESSION['username']=='admin'){
             <td>". $row['bike_no'] . "</td>
             <td>". $row['availability'] . "</td>
             <td>". $row['price'] . "</td>
-            <td>". $row['description'] . "</td>
+            <td>". $row['Stock'] . "</td>
             <td> <button class='book btn btn-sm btn-primary' id=d".$row['bike_no'].">Book</button>  </td>
           </tr>";
         } 

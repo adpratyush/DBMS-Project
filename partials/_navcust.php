@@ -7,7 +7,6 @@ else{
   $loggedin = false;
 }
 echo'<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Bike Showroom Management System</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -31,11 +30,13 @@ echo'<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       </li>
       <li class="nav-item">
         <a class="nav-link" href="cust_profile.php">Your Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="welcome_cust.php">Services</a>
       </li>';
       }
       
     
   echo'</div>
 </nav>';
-
 ?>

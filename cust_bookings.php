@@ -14,7 +14,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true || $_SESSION[
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,16 +24,19 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true || $_SESSION[
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap" rel="stylesheet">
     <style>
         body {
-            background-image: url("bg-images/13.jpg");
+            font-family: 'Poppins', sans-serif;
             height: 100%;
-            background-position: center;
+            background-image: url("images/add.jpg");
+            /* background-position: center; */
             background-repeat: no-repeat;
             background-size: cover;
-            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         .form-control {
             border-radius: 25px;
+            margin-bottom: 15px;
         }
 
         .btn {
@@ -46,12 +48,45 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true || $_SESSION[
             margin: 5px;
             width: 230px;
             height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        h3 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .table {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+        }
+
+        th, td {
+            text-align: center;
+        }
+
+        .alert {
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .no-bookings {
+            font-style: italic;
+            color: #555;
         }
     </style>
 </head>
-
 <body>
-    <?php require 'partials/_nav.php' ?>
+<section style="background:white;"><?php require 'partials/_nav.php' ?></section>
 
     <h3 class="text-center my-4">Bike Bookings</h3>
     <div class="container my-4">

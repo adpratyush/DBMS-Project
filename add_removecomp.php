@@ -70,37 +70,75 @@ if($_SESSION['username']!='admin'){
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap" rel="stylesheet">
     <title>Add/Remove Companies</title>
     <style>
-    .form-control{
-            border-radius:25px;
-          }
-          .btn{
-            border-radius:25px;
-          }
-          body{
+        body {
             font-family: 'Poppins', sans-serif;
-            /* The image used */
-             background-image: url("bg-images/11.jpg");
-
-             /* Full height */
-             height: 100%;
-
-            /* Center and scale the image nicely */
+            height: 100%;
+            background-image: url("images/add.jpg");
             background-position: center;
-             background-repeat: no-repeat;
-             background-size: cover;
-            
-          }
-          img{
-   	        float: left;
-   	        margin: 5px;
-   	        width: 230px;
-   	        height: 150px;
-          }
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            float: left;
+            margin: 5px;
+            width: 230px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        h3 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            border-radius: 25px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            border-radius: 25px;
+        }
+
+        .alert {
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .table {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+        }
+
+        th, td {
+            text-align: center;
+        }
+
+        .delete {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .delete:hover {
+            transform: scale(1.1);
+        }
     </style>
   </head>
   <body>
-  <?php require 'partials/_nav.php' ?>
-  <?php
+  <section style="background:white;"><?php require 'partials/_nav.php' ?></section>
+    <?php
   if($del){
     echo'<div class="alert alert-success alert-dismissible fade show" role="alert">
   <strong>Success!</strong> Company information deleted successfully.

@@ -27,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $avail = $_POST["avail"];
     $bikeno = $_POST["bikeno"];
     $price = $_POST["price"];
+    // $stock =$_POST["Stock"];
     $description = $_POST["description"];
 
     $sql = "INSERT INTO `bikes`(`bike_photo`,`bike_no`,`type`,`bike_name`,`availability`,`company`,`price`,`description`) VALUES ('$image','$bikeno','$type','$bikename','$avail','$compname','$price','$description')";
@@ -74,36 +75,71 @@ if (isset($_GET['delete'])) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap" rel="stylesheet">
     <title>Add/Remove Bikes</title>
     <style>
-    .form-control{
-            border-radius:25px;
-          }
-          .btn{
-            border-radius:25px;
-          }
-          body{
+        body {
             font-family: 'Poppins', sans-serif;
-            /* The image used */
-             /* background-image: url("images/add.jpg"); */
-
-             /* Full height */
-             height: 100%;
-
-            /* Center and scale the image nicely */
+            height: 100%;
             background-position: center;
-             background-repeat: no-repeat;
-             background-size: cover;
-            
-          }
-          img{
-   	        float: left;
-   	        margin: 5px;
-   	        width: 230px;
-   	        height: 150px;
-          }
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url("images/add.jpg"); /* Add your background image here */
+        }
+
+        img {
+            float: left;
+            margin: 5px;
+            width: 230px;
+            height: 150px;
+            border-radius: 10px; /* Add rounded corners to the images */
+            object-fit: cover; /* Ensure images maintain aspect ratio */
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* Add a semi-transparent white background to the container */
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        h3 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .form-control {
+            border-radius: 25px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            border-radius: 25px;
+        }
+
+        .alert {
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .table {
+            background-color: rgba(255, 255, 255, 0.9); /* Add a semi-transparent white background to the table */
+            border-radius: 15px;
+        }
+
+        th, td {
+            text-align: center;
+        }
+
+        .delete {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .delete:hover {
+            transform: scale(1.1);
+        }
     </style>
   </head>
   <body>
-  <?php require 'partials/_nav.php' ?>
+  <section style="background:white;"><?php require 'partials/_nav.php' ?></section>
   <?php
   if($del){
     echo'<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -162,6 +198,7 @@ if (isset($_GET['delete'])) {
     <label for="price">Price</label>
     <input type="text" class="form-control" id="price" name = "price" maxlength = "20">
   </div>
+
   <div class="form-group col-md-6">
     <label for="exampleFormControlTextarea1">Bike Description</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
@@ -193,6 +230,7 @@ if (isset($_GET['delete'])) {
           <th scope="col">Bike Number</th>
           <th scope="col">Availability</th>
           <th scope="col">Price</th>
+          <!-- <th scope="col">Stock</th> -->
           <th scope="col">Description</th>
           <th scope="col">Actions</th>
         </tr>
@@ -220,6 +258,7 @@ if (isset($_GET['delete'])) {
     </table>
   </div>
   <hr>
+  
 
     <!-- Optional JavaScript; choose one of the two! -->
 

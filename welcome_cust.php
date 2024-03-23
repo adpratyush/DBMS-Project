@@ -26,31 +26,101 @@ if($_SESSION['username']=='admin'){
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap" rel="stylesheet">
     <title>Welcome</title>
     <style>
-     body {
-          /* The image used */
-          background-image: url("bg-images/12.jpg");
+         body, html {
+            height: 100%;
+        }
 
-         /* Full height */
-          height: 100%;
+        body {
+            /* The image used */
+            background-image: url("images/login.png");
 
-          /* Center and scale the image nicely */
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-          font-family: 'Poppins', sans-serif;
-         }
-          .form-control{
-            border-radius:25px;
-          }
-          .btn{
-            border-radius:25px;
-          }
-    </style>
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-control {
+            border-radius: 25px;
+        }
+
+        .btn {
+            border-radius: 25px;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h3 {
+            color: #fff;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .card {
+            border-radius: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-img-top {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .card-body {
+            background-color: #333;
+            color: #fff;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .card-title {
+            font-weight: bold;
+        }
+
+    .btn {
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #000;
+      cursor: pointer;
+      border: 3px solid;
+      padding: 0.25em 0.5em;
+      box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+      position: relative;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .btn:active {
+      box-shadow: 0px 0px 0px 0px;
+      top: 5px;
+      left: 5px;
+    }
+
+    @media (min-width: 768px) {
+      .btn {
+        padding: 0.25em 0.75em;
+      }
+    }
+        </style>
   </head>
   <body>
   <?php require 'partials/_navcust.php' ?>
     <div class="container">
-    <h3 class= "text-center my-4" >Welcome-<?php echo $_SESSION['username']?></h3>
+    <h3 class= "text-center my-4" >Welcome <?php echo $_SESSION['username']?></h3>
     <div class="row">
     <div class="col-md-4">
     <div class="card" style="width: 18rem;">
@@ -65,7 +135,7 @@ if($_SESSION['username']=='admin'){
 
 <div class="col-md-4">
     <div class="card" style="width: 18rem;">
-  <img src="re.jpg" class="card-img-top" alt="...">
+  <img src="re.jpg" class="card-img-top" alt="..." style="width:auto;">
   <div class="card-body my-2">
     <h5 class="card-title">View Companies</h5>
     <p class="card-text">View the different companies that are available.</p>
@@ -86,6 +156,7 @@ if($_SESSION['username']=='admin'){
 </div>
     </div>
     </div>
+    
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

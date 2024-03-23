@@ -62,7 +62,7 @@ if(isset($_GET['cancel'])){
          </style>
   </head>
   <body>
-  <?php require 'partials/_nav.php' ?>
+  <?php require 'partials/_navcust.php' ?>
   <?php
   if($cancel){
     echo'<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -89,6 +89,7 @@ if(isset($_GET['cancel'])){
           <th scope="col">Bike Number</th>
           <th scope="col">Final Price</th>
           <th scope="col">Actions</th>
+          <!-- <a href="bill.php">Generate bill</a> -->
         </tr>
       </thead>
       <tbody>
@@ -104,7 +105,11 @@ if(isset($_GET['cancel'])){
             <td>". $row['booking_id'] . "</td>
             <td>". $row['bike_no'] . "</td>
             <td>". $row['final_price'] . "</td>
-            <td> <button class='cancel btn btn-sm btn-primary' id=d".$row['booking_id'].">Cancel Booking</button>  </td>
+            <td> 
+            <td> 
+            <button class='cancel btn btn-sm btn-primary' id=d".$row['booking_id'].">Cancel Booking</button>
+            <a href='bill.php?booking_id=". $row['booking_id'] ."' class='btn btn-sm btn-success generate-bill'>Generate Invoice</a>            
+            </td>
           </tr>";
         } 
           ?>
@@ -148,7 +153,15 @@ cancel = document.getElementsByClassName('cancel');
         }
       })
     })
+    $(document).ready(function() {
+    $('.generate-bill').click(function() {
+        var bookingId = $(this).attr('id').substr(1);
+        // Redirect to the generate bill page with bookingId as parameter
+        window.location = `generate_bill.php?booking_id=${bookingId}`;
+    });
+});
   </script>
+  
 
   </body>
 </html>

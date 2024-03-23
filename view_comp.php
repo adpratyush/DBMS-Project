@@ -24,7 +24,7 @@ include 'partials/_dbconnect.php';
     <style>
     body {
           /* The image used */
-          background-image: url("bg-images/15.jpg");
+          /* background-image: url("images/add.jpg"); */
 
          /* Full height */
           height: 100%;
@@ -44,7 +44,7 @@ include 'partials/_dbconnect.php';
          </style>
   </head>
   <body>
-  <?php require 'partials/_nav.php' ?>
+  <?php require 'partials/_navcust.php' ?>
   
   <h3 class= "text-center my-4" >Available Companies</h3>
   <div class="container">
